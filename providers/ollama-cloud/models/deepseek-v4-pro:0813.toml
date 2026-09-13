@@ -2,10 +2,9 @@
 # Effort: OpenAI POST /v1/chat/completions accepts top-level `reasoning_effort`
 # or `reasoning.effort` with high|max (DeepSeek V4 maps low/medium -> high).
 # Sources: https://docs.ollama.com/capabilities/thinking, https://docs.ollama.com/openai
-# Costs: https://ollama.com/pricing (accessed 2026-09-10)
 # API-verified context: https://ollama.com/api/show (deepseek4.context_length = 1048576)
-# Output: same deepseek4 family as peer deepseek-v4-flash:0731, which serves
-# output = 1048576; unpinned deepseek-v4-pro served output = 1048576 before removal.
+# Output: Ollama has no separate output cap; deepseek4 peers on this host
+# (deepseek-v4-flash:0731, deepseek-v4-pro) serve output = 1048576.
 base_model = "deepseek/deepseek-v4-pro-0813"
 
 reasoning_options = [{ type = "toggle" }, { type = "effort", values = ["high", "max"] }]
